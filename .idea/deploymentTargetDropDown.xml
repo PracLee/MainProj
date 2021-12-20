@@ -7,11 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="$USER_HOME$/.android/avd/samsung_SM_G9550_API_29.avd" />
+            <value value="$USER_HOME$/.android/avd/samsung_SM_G9550_API_29_2.avd" />
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2021-12-18T15:42:54.258899Z" />
+    <timeTargetWasSelectedWithDropDown value="2021-12-20T12:25:44.372943Z" />
   </component>
 </project>
