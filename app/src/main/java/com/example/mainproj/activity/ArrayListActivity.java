@@ -55,7 +55,7 @@ public class ArrayListActivity extends AppCompatActivity {
         btn_array_item_add = findViewById(R.id.btn_array_item_add);
         btn_array_item_edit = findViewById(R.id.btn_array_item_edit);
         btn_array_item_del = findViewById(R.id.btn_array_item_del);
-        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice,itemList);
+        arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_single_choice,itemList);
         lv_array = findViewById(R.id.lv_array);
         et_array_item = findViewById(R.id.et_array_item);
     }
@@ -68,8 +68,8 @@ public class ArrayListActivity extends AppCompatActivity {
         btn_array_back.setOnClickListener(listener_back);
         lv_array.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         btn_array_item_add.setOnClickListener(listener_item_add);
-        btn_array_item_add.setOnClickListener(listener_item_edit);
-        btn_array_item_add.setOnClickListener(listener_item_del);
+        btn_array_item_edit.setOnClickListener(listener_item_edit);
+        btn_array_item_del.setOnClickListener(listener_item_del);
     }
     private View.OnClickListener listener_back = new View.OnClickListener() {
         @Override
@@ -81,15 +81,13 @@ public class ArrayListActivity extends AppCompatActivity {
     private View.OnClickListener listener_item_add = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            LogService.info(activity,"Here Click!!!!!!");
             String item = et_array_item.getText().toString();
             if(item.equals("")){
-                Toast.makeText(activity,"Input Text Please!!",Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity,"Input Text Please!",Toast.LENGTH_SHORT).show();
             }
-            else {
+            else{
                 itemList.add(item);
-
-                arrayAdapter.notifyDataSetChanged();    // data change!
+                arrayAdapter.notifyDataSetChanged();
             }
         }
     };
