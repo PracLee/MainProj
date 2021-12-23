@@ -21,6 +21,13 @@
         <entry key="app/src/main/res/login/layout/activity_tab.xml" value="0.29846014492753625" />
         <entry key="app/src/main/res/main/drawable/pallete.xml" value="0.3515625" />
         <entry key="app/src/main/res/main/layout/activity_main.xml" value="0.27853260869565216" />
+        <entry key="app/src/main/res/navi/drawable/icon_home.xml" value="0.3515625" />
+        <entry key="app/src/main/res/navi/drawable/icon_list.xml" value="0.3515625" />
+        <entry key="app/src/main/res/navi/drawable/icon_navi_menu.xml" value="0.3515625" />
+        <entry key="app/src/main/res/navi/drawable/icon_post.xml" value="0.3515625" />
+        <entry key="app/src/main/res/navi/layout/activity_navi.xml" value="0.375" />
+        <entry key="app/src/main/res/navi/layout/nav_item.xml" value="0.3038949275362319" />
+        <entry key="app/src/main/res/navi/menu/menu_item.xml" value="0.33541666666666664" />
         <entry key="app/src/main/res/tab/layout/activity_tab.xml" value="0.29846014492753625" />
         <entry key="app/src/main/res/tab/layout/fragment_tab_one.xml" value="0.8916260313916472" />
         <entry key="app/src/main/res/tab/layout/fragment_tab_two.xml" value="0.29483695652173914" />

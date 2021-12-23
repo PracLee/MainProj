@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv_main;
     private ListAdapter listAdapter;
 
-    private String[] items = {"Tab View","List View Optional","Third"};
+    private String[] items = {"Tab View","List View","Navigation View"};
+
+    private String login_id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         lv_main.setAdapter(listAdapter);
     }
     private void addListener(){
+        Intent intent = getIntent();
+        login_id = intent.getStringExtra("id");
         btn_main_back.setOnClickListener(listener_backClick);
         lv_main.setOnItemClickListener(listener_item_click);
     }
@@ -65,12 +69,14 @@ public class MainActivity extends AppCompatActivity {
                 LogService.info(activity,"TabView Click");
                 intent = new Intent(activity,TabActivity.class);
             }
-            else if(item.equals("List View Optional")){
+            else if(item.equals("List View")){
                 LogService.info(activity,"List View Optional Click");
                 intent = new Intent(activity, ArrayListActivity.class);
             }
-            else if(item.equals("third")){
-                LogService.info(activity,"Third Click");
+            else if(item.equals("Navigation View")){
+                LogService.info(activity,"Navigation View Click");
+                intent = new Intent(activity, NaviActivity.class);
+                intent.putExtra("id",login_id);
             }
             if(intent!=null){
                 startActivity(intent);

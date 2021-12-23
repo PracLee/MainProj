@@ -34,7 +34,8 @@ android {
                                 'src\\main\\res\\common',
                                 'src\\main\\res\\test',
                                 'src\\main\\res\\tab',
-                                'src\\main\\res\\list'
+                                'src\\main\\res\\list',
+                                'src\\main\\res\\navi'
                         ]
             }
         }

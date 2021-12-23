@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -70,6 +71,8 @@ public class ArrayListActivity extends AppCompatActivity {
         btn_array_item_add.setOnClickListener(listener_item_add);
         btn_array_item_edit.setOnClickListener(listener_item_edit);
         btn_array_item_del.setOnClickListener(listener_item_del);
+
+        lv_array.setOnItemClickListener(listener_item_click);
     }
     private View.OnClickListener listener_back = new View.OnClickListener() {
         @Override
@@ -87,6 +90,7 @@ public class ArrayListActivity extends AppCompatActivity {
             }
             else{
                 itemList.add(item);
+                et_array_item.setText("");
                 arrayAdapter.notifyDataSetChanged();
             }
         }
@@ -95,14 +99,40 @@ public class ArrayListActivity extends AppCompatActivity {
     private View.OnClickListener listener_item_edit = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            int index = lv_array.getCheckedItemPosition();
+            if(index<0){ // when non selected
+               Toast.makeText(activity,"Select Edit One",Toast.LENGTH_SHORT).show();
+            }else{
+                String item = et_array_item.getText().toString();
+                if(item.equals("")){
+                    Toast.makeText(activity,"Input Edit Text!!!",Toast.LENGTH_SHORT).show();
+                }else{
+                    itemList.set(index,item);
+                    arrayAdapter.notifyDataSetChanged();
+                }
 
+            }
         }
     };
 
     private View.OnClickListener listener_item_del = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            int index = lv_array.getCheckedItemPosition();
+            if(index<0){ // when non selected
+                Toast.makeText(activity,"Select Edit One",Toast.LENGTH_SHORT).show();
+            }else{
+                itemList.remove(index);
+                arrayAdapter.notifyDataSetChanged();
+            }
+        }
+    };
 
+    private AdapterView.OnItemClickListener listener_item_click = new AdapterView.OnItemClickListener() {
+        @Override
+        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            String item = itemList.get(i);
+            Toast.makeText(activity,i + " : "+ item,Toast.LENGTH_SHORT).show();
         }
     };
 }

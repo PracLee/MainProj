@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity
+            android:name=".activity.NaviActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.ArrayListActivity"
             android:exported="false" />
         <activity
