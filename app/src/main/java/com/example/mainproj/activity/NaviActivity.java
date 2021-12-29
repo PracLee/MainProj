@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.mainproj.R;
 import com.example.mainproj.log.LogService;
@@ -80,7 +81,20 @@ public class NaviActivity extends AppCompatActivity {
     private NavigationView.OnNavigationItemSelectedListener listener_navi_menu_click = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+            if(item.getItemId()==R.id.icon_post){
+                Toast.makeText(activity,"Post Menu Click!",Toast.LENGTH_SHORT).show();
+                // navi close
+                layout_navi.closeDrawer(GravityCompat.START);
+                return true;
+            }else if(item.getItemId()==R.id.icon_home){
+                Toast.makeText(activity,"Home Menu Click!",Toast.LENGTH_SHORT).show();
+                layout_navi.closeDrawer(GravityCompat.START);
+                return true;
+            }else if(item.getItemId()==R.id.icon_list) {
+                Toast.makeText(activity, "List Menu Click!", Toast.LENGTH_SHORT).show();
+                layout_navi.closeDrawer(GravityCompat.START);
+                return true;
+            }
             return false;
         }
     };
