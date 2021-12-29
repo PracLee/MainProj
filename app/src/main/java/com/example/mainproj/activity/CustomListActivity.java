@@ -37,10 +37,10 @@ public class CustomListActivity extends AppCompatActivity {
         try {
             setContentView(R.layout.activity_custom_list);
             init();
-            /*
+
             setting();
             addListener();
-            */
+
         }catch (Exception e){
             LogService.error(this,e.getMessage(),e);
         }
@@ -55,7 +55,7 @@ public class CustomListActivity extends AppCompatActivity {
 
         lv_custom_item = findViewById(R.id.lv_custom_item);
 
-        /*list_name.add("Lee");
+       /* list_name.add("Lee");
         list_age.add("29");
         list_name.add("Kim");
         list_age.add("15");
@@ -100,8 +100,8 @@ public class CustomListActivity extends AppCompatActivity {
             }
         };*/
     }
-    /*private void setting(){
-        lv_custom_item.setAdapter(baseAdapter);
+    private void setting(){
+        //lv_custom_item.setAdapter(baseAdapter);
     }
     private void addListener(){
         btn_custom_item_add.setOnClickListener(listener_item_add);
@@ -112,11 +112,11 @@ public class CustomListActivity extends AppCompatActivity {
             String name = et_custom_item_name.getText().toString();
             String age = et_custom_item_age.getText().toString();
             if(!(name.equals(""))&&!(age.equals(""))){
-                list_name.add(name);
-                list_age.add(age);
-                baseAdapter.notifyDataSetChanged();
+//                list_name.add(name);
+//                list_age.add(age);
+//                baseAdapter.notifyDataSetChanged();
             }
 
         }
-    };*/
+    };
 }
