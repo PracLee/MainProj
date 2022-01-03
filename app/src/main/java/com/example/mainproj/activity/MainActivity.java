@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv_main;
     private ListAdapter listAdapter;
 
-    private String[] items = {"Tab View","List View","Navigation View","Custom List View"};
+    private String[] items = {"Tab View","List View","Navigation View","Custom List View","Recycle View"};
 
     private String login_id;
     @Override
@@ -81,6 +81,10 @@ public class MainActivity extends AppCompatActivity {
             else if(item.equals("Custom List View")){
                 LogService.info(activity,"Custom List View Click");
                 intent = new Intent(activity, CustomListActivity.class);
+            }
+            else if(item.equals("Recycle View")){
+                LogService.info(activity, "Recycle Activity Click");
+                intent = new Intent(activity, RecycleActivity.class);
             }
             if(intent!=null){
                 startActivity(intent);

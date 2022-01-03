@@ -25,8 +25,9 @@ public class CustomAdapter extends BaseAdapter {
         private TextView tv_custom_item_age;
     }
 
-    public CustomAdapter(Activity activity){
+    public CustomAdapter(Activity activity, List<CustomMemberVO> memberVOList){
         this.activity = activity;
+        this.memberVOList = memberVOList;
     }
 
     @Override
@@ -60,7 +61,14 @@ public class CustomAdapter extends BaseAdapter {
 
         holder.tv_custom_item_name.setText(memberVOList.get(i).getName());
         holder.tv_custom_item_age.setText(memberVOList.get(i).getAge());
-
+        if(i%2 == 1){
+            holder.iv_custom_profile.setImageResource(R.drawable.icon_woman_profile);
+        }
         return view;
+    }
+
+    public void addItem(CustomMemberVO customMemberVO){
+        memberVOList.add(customMemberVO);
+        notifyDataSetChanged();
     }
 }
