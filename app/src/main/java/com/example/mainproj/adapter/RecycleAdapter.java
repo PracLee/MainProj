@@ -58,9 +58,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.RecycleH
         holder.tv_recycle_item_age.setText(memberList.get(position).getAge());
         if(position%2==1){
             holder.iv_recycle_profile.setImageResource(R.drawable.icon_woman_profile);
+            holder.layout_recycle_item.setAnimation(AnimationUtils.loadAnimation(activity,R.anim.down));
+        }else{
+            holder.layout_recycle_item.setAnimation(AnimationUtils.loadAnimation(activity,R.anim.down));
         }
 
-        holder.layout_recycle_item.setAnimation(AnimationUtils.loadAnimation(activity,R.anim.down));
+
     }
 
     @Override

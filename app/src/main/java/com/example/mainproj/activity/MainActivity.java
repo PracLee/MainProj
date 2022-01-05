@@ -1,5 +1,9 @@
 package com.example.mainproj.activity;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -23,9 +27,12 @@ public class MainActivity extends AppCompatActivity {
     private ListView lv_main;
     private ListAdapter listAdapter;
 
-    private String[] items = {"Tab View","List View","Navigation View","Custom List View","Recycle View"};
+    private String[] items = {"Tab View","List View","Navigation View","Custom List View","Recycle View","Code Only Layout","Activity Result"};
 
     private String login_id;
+
+    // Save Parameter
+    private ActivityResultLauncher<Intent> resultLauncher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setting(){
         lv_main.setAdapter(listAdapter);
+        resultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), activityResultCallback);
     }
     private void addListener(){
         Intent intent = getIntent();
@@ -86,9 +94,23 @@ public class MainActivity extends AppCompatActivity {
                 LogService.info(activity, "Recycle Activity Click");
                 intent = new Intent(activity, RecycleActivity.class);
             }
-            if(intent!=null){
-                startActivity(intent);
+            else if(item.equals("Code Only Layout")){
+                LogService.info(activity,"Code Only Layout");
+                intent = new Intent(activity, CodeActivity.class);
             }
+            else if(item.equals("Activity Result")){
+                intent = new Intent(activity, ResultCodeActivity.class);
+            }
+            if(intent!=null){
+                //startActivity(intent);
+                resultLauncher.launch(intent);
+            }
+        }
+    };
+    private ActivityResultCallback activityResultCallback = new ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            LogService.info(activity, result.getResultCode()+"");
         }
     };
 }
