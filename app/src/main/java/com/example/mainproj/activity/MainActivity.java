@@ -1,5 +1,8 @@
 package com.example.mainproj.activity;
 
+import static com.example.mainproj.config.RequestCodeConfig.REQ_CODE;
+import static com.example.mainproj.config.RequestCodeConfig.REQ_MAIN_ACTIVITY;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
@@ -17,6 +20,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.example.mainproj.R;
+import com.example.mainproj.config.ResultCodeConfig;
 import com.example.mainproj.log.LogService;
 
 public class MainActivity extends AppCompatActivity {
@@ -100,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else if(item.equals("Activity Result")){
                 intent = new Intent(activity, ResultCodeActivity.class);
+                intent.putExtra(REQ_CODE, REQ_MAIN_ACTIVITY);
             }
             if(intent!=null){
                 //startActivity(intent);
@@ -110,7 +115,25 @@ public class MainActivity extends AppCompatActivity {
     private ActivityResultCallback activityResultCallback = new ActivityResultCallback<ActivityResult>() {
         @Override
         public void onActivityResult(ActivityResult result) {
-            LogService.info(activity, result.getResultCode()+"");
+            int resultCode = result.getResultCode();
+
+            Intent intent = result.getData();
+
+            if(resultCode == ResultCodeConfig.RESULT_CODE_ACTIVITY_CANCELED){
+                LogService.info(activity, "Result Code Activity Canceled!");
+
+            }
+            else if(resultCode == ResultCodeConfig.RESULT_CODE_ACTIVITY_OK){
+                LogService.info(activity, "Result Param Activity OK!");
+                if(intent != null){
+                    String data = intent.getStringExtra("DATA");
+                    LogService.info(activity,data);
+                    if(data.equals("Code_Move_Data")){
+                        Intent moveIntent = new Intent(activity, CodeActivity.class);
+                        resultLauncher.launch(moveIntent);
+                    }
+                }
+            }
         }
     };
 }
