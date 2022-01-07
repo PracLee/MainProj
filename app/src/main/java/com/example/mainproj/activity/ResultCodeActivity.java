@@ -22,7 +22,8 @@ public class ResultCodeActivity extends AppCompatActivity {
     private Button btn_res_code_send
             ,btn_res_param_send
             ,btn_req_code_send
-            ,btn_code_move;
+            ,btn_code_move
+            ,btn_custom_list_move;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class ResultCodeActivity extends AppCompatActivity {
         btn_res_param_send = findViewById(R.id.btn_res_param_send);
         btn_req_code_send = findViewById(R.id.btn_req_code_send);
         btn_code_move = findViewById(R.id.btn_code_move);
-
+        btn_custom_list_move = findViewById(R.id.btn_custom_list_move);
     }
     public void addListener(){
         btn_code_send_back.setOnClickListener(listener_back_click);
@@ -49,6 +50,7 @@ public class ResultCodeActivity extends AppCompatActivity {
         btn_res_param_send.setOnClickListener(listener_res_param_send);
         btn_req_code_send.setOnClickListener(listener_req_code_send);
         btn_code_move.setOnClickListener(listener_res_code_move);
+        btn_custom_list_move.setOnClickListener(custom_res_move);
     }
     private View.OnClickListener listener_back_click = new View.OnClickListener() {
         @Override
@@ -98,6 +100,21 @@ public class ResultCodeActivity extends AppCompatActivity {
 
             if(reqCode == REQ_MAIN_ACTIVITY){
                 intent.putExtra("DATA","Code_Move_Data");
+            }
+
+            setResult(RESULT_CODE_ACTIVITY_OK,intent);
+            finish();
+        }
+    };
+    private View.OnClickListener custom_res_move = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = getIntent();
+
+            int reqCode = intent.getIntExtra(REQ_CODE, -1);
+
+            if(reqCode == REQ_MAIN_ACTIVITY){
+                intent.putExtra("DATA","Code_Move_CustomList");
             }
 
             setResult(RESULT_CODE_ACTIVITY_OK,intent);

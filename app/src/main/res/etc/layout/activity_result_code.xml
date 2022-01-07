@@ -48,4 +48,10 @@
         android:layout_height="wrap_content"
         android:text="to MainActivity" />
 
+    <Button
+        android:id="@+id/btn_custom_list_move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To CustomList Activity" />
+
 </LinearLayout>
