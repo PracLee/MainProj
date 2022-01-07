@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
             "Recycle View",
             "Code Only Layout",
             "Activity Result",
-            "CustomList Activity To Param TO FIX!!!"
+            "CustomList Activity To Param TO FIX!!!",
+            "Move to Click Event",
+            "Use External Font"
     };
 
     private String login_id;
@@ -122,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("DATA", "Code_Move_CustomList");
                 setResult(RESULT_CODE_ACTIVITY_OK, intent);
                 finish();
+            }
+            else if(item.equals("Move to Click Event")){
+                intent = new Intent(activity, ClickApplyActivity.class);
+            }
+            else if(item.equals("Use External Font")){
+                intent = new Intent(activity, FontActivity.class);
             }
             if(intent!=null){
                 //startActivity(intent);
