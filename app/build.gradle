@@ -36,7 +36,10 @@ android {
                                 'src\\main\\res\\tab',
                                 'src\\main\\res\\list',
                                 'src\\main\\res\\navi',
-                                'src\\main\\res\\etc'
+                                'src\\main\\res\\etc',
+                                'src\\main\\res\\pref',
+                                'src\\main\\res\\scroll',
+                                'src\\main\\res\\handle'
                         ]
             }
         }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="scroll_content">
+        레이아웃이 화면에 넘칠 때 스크롤 뷰를 넣어 \n 스크롤 효과를 낼 수 있다. \n 수직으로 스크롤 하는 기능을 하며, \n 수평으로 스크롤 하는 뷰는 \n 수평 스크롤 뷰가 따로 존재합니다.
+    </string>
+</resources>

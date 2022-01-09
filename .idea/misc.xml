@@ -6,12 +6,14 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/common/drawable-v24/ic_launcher_foreground.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/common/drawable/icon_back_arrow.xml" value="0.19895833333333332" />
+        <entry key="app/src/main/res/common/drawable/icon_plus.xml" value="0.3515625" />
         <entry key="app/src/main/res/common/drawable/list_button.xml" value="0.3515625" />
         <entry key="app/src/main/res/common/drawable/list_button_pressed.xml" value="0.3515625" />
         <entry key="app/src/main/res/etc/layout/activity_click_apply.xml" value="0.25" />
         <entry key="app/src/main/res/etc/layout/activity_font.xml" value="0.30027173913043476" />
         <entry key="app/src/main/res/etc/layout/activity_result_code.xml" value="0.30027173913043476" />
         <entry key="app/src/main/res/etc/layout/item_click_apply.xml" value="0.27239583333333334" />
+        <entry key="app/src/main/res/handle/layout/activity_handle.xml" value="0.2966485507246377" />
         <entry key="app/src/main/res/list/drawable/icon_profile.xml" value="0.3515625" />
         <entry key="app/src/main/res/list/drawable/icon_woman_profile.xml" value="0.3515625" />
         <entry key="app/src/main/res/list/layout/activity_array.xml" value="0.2887236276049919" />
@@ -39,6 +41,13 @@
         <entry key="app/src/main/res/navi/layout/activity_navi.xml" value="0.375" />
         <entry key="app/src/main/res/navi/layout/nav_item.xml" value="0.3038949275362319" />
         <entry key="app/src/main/res/navi/menu/menu_item.xml" value="0.33541666666666664" />
+        <entry key="app/src/main/res/pref/layout/activity_pref.xml" value="0.30027173913043476" />
+        <entry key="app/src/main/res/pref/layout/layout_header.xml" value="0.30027173913043476" />
+        <entry key="app/src/main/res/pref/layout/layout_title.xml" value="0.30027173913043476" />
+        <entry key="app/src/main/res/scroll/layout/activity_scroll.xml" value="0.30027173913043476" />
+        <entry key="app/src/main/res/scroll/layout/layout_content.xml" value="0.30027173913043476" />
+        <entry key="app/src/main/res/scroll/layout/layout_title.xml" value="0.1" />
+        <entry key="app/src/main/res/scroll/layout/layout_title2.xml" value="0.30027173913043476" />
         <entry key="app/src/main/res/tab/layout/activity_tab.xml" value="0.29846014492753625" />
         <entry key="app/src/main/res/tab/layout/fragment_tab_one.xml" value="0.8916260313916472" />
         <entry key="app/src/main/res/tab/layout/fragment_tab_two.xml" value="0.29483695652173914" />
@@ -55,7 +64,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.3038949275362319" />
+        <option name="scale" value="0.1" />
       </ProjectState>
     </option>
   </component>

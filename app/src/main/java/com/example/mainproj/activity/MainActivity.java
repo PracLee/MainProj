@@ -43,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
             "Activity Result",
             "CustomList Activity To Param TO FIX!!!",
             "Move to Click Event",
-            "Use External Font"
+            "Use External Font",
+            "Share Setting",
+            "Scroll View",
+            "Handler Activity"
     };
 
     private String login_id;
@@ -130,6 +133,15 @@ public class MainActivity extends AppCompatActivity {
             }
             else if(item.equals("Use External Font")){
                 intent = new Intent(activity, FontActivity.class);
+            }
+            else if(item.equals("Share Setting")){
+                intent = new Intent(activity, SharedPrefActivity.class);
+            }
+            else if(item.equals("Scroll View")){
+                intent = new Intent(activity, ScrollActivity.class);
+            }
+            else if(item.equals("Handler Activity")){
+                intent = new Intent(activity,HandlerActivity.class);
             }
             if(intent!=null){
                 //startActivity(intent);

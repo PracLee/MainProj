@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar" >
         <activity
+            android:name=".activity.HandlerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ScrollActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SharedPrefActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.FontActivity"
             android:exported="false" />
         <activity
