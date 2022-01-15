@@ -6,9 +6,15 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/common/drawable-v24/ic_launcher_foreground.xml" value="0.19895833333333332" />
         <entry key="app/src/main/res/common/drawable/icon_back_arrow.xml" value="0.19895833333333332" />
+        <entry key="app/src/main/res/common/drawable/icon_close.xml" value="0.3515625" />
         <entry key="app/src/main/res/common/drawable/icon_plus.xml" value="0.3515625" />
+        <entry key="app/src/main/res/common/drawable/icon_question.xml" value="0.3515625" />
         <entry key="app/src/main/res/common/drawable/list_button.xml" value="0.3515625" />
         <entry key="app/src/main/res/common/drawable/list_button_pressed.xml" value="0.3515625" />
+        <entry key="app/src/main/res/dialog/drawable/background_dialog.xml" value="0.3515625" />
+        <entry key="app/src/main/res/dialog/layout/activity_custom_dialog.xml" value="0.2966485507246377" />
+        <entry key="app/src/main/res/dialog/layout/dialog_custom.xml" value="0.5" />
+        <entry key="app/src/main/res/dialog/layout/layout_dialog_comfirm.xml" value="0.2966485507246377" />
         <entry key="app/src/main/res/etc/layout/activity_click_apply.xml" value="0.25" />
         <entry key="app/src/main/res/etc/layout/activity_font.xml" value="0.30027173913043476" />
         <entry key="app/src/main/res/etc/layout/activity_result_code.xml" value="0.30027173913043476" />
@@ -30,6 +36,7 @@
         <entry key="app/src/main/res/login/drawable/login_button_default.xml" value="0.3515625" />
         <entry key="app/src/main/res/login/drawable/login_button_pressed.xml" value="0.3515625" />
         <entry key="app/src/main/res/login/drawable/login_facebook_button.xml" value="0.3515625" />
+        <entry key="app/src/main/res/login/layout/activity_handler.xml" value="0.23125" />
         <entry key="app/src/main/res/login/layout/activity_login.xml" value="0.3618741909751824" />
         <entry key="app/src/main/res/login/layout/activity_tab.xml" value="0.29846014492753625" />
         <entry key="app/src/main/res/main/drawable/pallete.xml" value="0.3515625" />

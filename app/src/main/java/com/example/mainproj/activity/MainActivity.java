@@ -4,12 +4,6 @@ import static com.example.mainproj.config.RequestCodeConfig.REQ_CODE;
 import static com.example.mainproj.config.RequestCodeConfig.REQ_MAIN_ACTIVITY;
 import static com.example.mainproj.config.ResultCodeConfig.RESULT_CODE_ACTIVITY_OK;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,10 +14,15 @@ import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.mainproj.R;
 import com.example.mainproj.config.ResultCodeConfig;
 import com.example.mainproj.log.LogService;
-import com.example.mainproj.utill.ConvertUnitUtil;
 
 public class MainActivity extends AppCompatActivity {
     private Activity activity;
@@ -46,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
             "Use External Font",
             "Share Setting",
             "Scroll View",
-            "Handler Activity"
+            "Handler Activity",
+            "Custom Dialog"
     };
 
     private String login_id;
@@ -141,7 +141,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(activity, ScrollActivity.class);
             }
             else if(item.equals("Handler Activity")){
-                intent = new Intent(activity,HandlerActivity.class);
+                //intent = new Intent(activity,HandlerActivity.class);
+            }
+            else if(item.equals("Custom Dialog")){
+                intent = new Intent(activity, CustomDialogActivity.class);
             }
             if(intent!=null){
                 //startActivity(intent);

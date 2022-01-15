@@ -50,4 +50,60 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Handler Stop" />
+
+    <Button
+        android:id="@+id/btn_handler_delay_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Handler wait Start (3 second)" />
+
+    <Button
+        android:id="@+id/btn_handler_delay_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="handler wait stop" />
+
+    <Button
+        android:id="@+id/btn_timer_start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="timer start" />
+
+    <RadioGroup
+        android:id="@+id/rg_timer"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_timer_wiget"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:checked="true"
+            android:gravity="center"
+            android:text="Use Widget post" />
+
+        <RadioButton
+            android:id="@+id/rb_timer_run"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Use RunOnUI" />
+
+        <RadioButton
+            android:id="@+id/rb_timer_handler"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Use Handler" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_timer_stop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="timer stop" />
 </LinearLayout>

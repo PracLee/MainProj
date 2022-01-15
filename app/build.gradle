@@ -39,7 +39,8 @@ android {
                                 'src\\main\\res\\etc',
                                 'src\\main\\res\\pref',
                                 'src\\main\\res\\scroll',
-                                'src\\main\\res\\handle'
+                                'src\\main\\res\\handle',
+                                'src\\main\\res\\dialog'
                         ]
             }
         }
