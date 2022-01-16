@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9cb868">
+    android:background="#9cb868"
+    android:gravity="center">
 
     <TextView
         android:id="@+id/textView2"

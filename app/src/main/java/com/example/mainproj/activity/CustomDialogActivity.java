@@ -10,7 +10,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mainproj.R;
+import com.example.mainproj.dialog.CustomDialog;
 import com.example.mainproj.log.LogService;
+
+import java.text.SimpleDateFormat;
 
 public class CustomDialogActivity extends AppCompatActivity {
     private Activity activity;
@@ -41,6 +44,7 @@ public class CustomDialogActivity extends AppCompatActivity {
     private void setting(){
 
     }
+
     private void addListener(){
         btn_custom_dialog_back.setOnClickListener(listener_back_click);
         btn_call_custom_dialog.setOnClickListener(listener_call_custom_dialog);
@@ -53,16 +57,42 @@ public class CustomDialogActivity extends AppCompatActivity {
             finish();
         }
     };
+
+
     private View.OnClickListener listener_call_custom_dialog = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            CustomDialog customDialog = new CustomDialog(activity, CustomDialog.DialogMode.MODE_CONFIRM);
+            customDialog.setTitle("Confirm Title");
+            customDialog.setContent("Dialog Content!");
+            customDialog.setOnDialogClickListener(new CustomDialog.OnDialogClickListener() {
+                @Override
+                public void onYesClick() {
+                    tv_dialog_result.setText("Custom Dialog : Yes Button Click!");
+                }
 
+                @Override
+                public void onNoClick() {
+                    tv_dialog_result.setText("Custom Dialog : No Button Click!");
+                }
+            });
+            customDialog.show();
         }
     };
+
     private View.OnClickListener listener_call_calender_dialog = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            CustomDialog customDialog = new CustomDialog(activity, CustomDialog.DialogMode.MODE_CALENDER);
+            customDialog.setTitle("Calender Title");
+            customDialog.setOnCalenderDialogClickListener(new CustomDialog.OnCalenderDialogClickListener() {
+                @Override
+                public void onDoneClick() {
+                    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy년 MM월 dd일");
+                    tv_dialog_result.setText(simpleDateFormat.format(customDialog.getDate())+"Selected!");
+                }
+            });
+            customDialog.show();
         }
     };
 }

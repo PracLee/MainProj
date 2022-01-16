@@ -1,10 +1,9 @@
 package com.example.mainproj.activity;
-/*
+
+
 import static java.lang.Thread.sleep;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -12,7 +11,6 @@ import android.os.Message;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -198,57 +196,10 @@ public class HandlerActivity extends AppCompatActivity {
         btn_timer_stop.setOnClickListener(listener_timer_stop);
         //rg_timer.setOnCheckedChangeListener(listener_timer_mode_change);
         //rg_timer.setOnCheckedChangeListener(new RadioCheckedChangeListener(activity,rg_timer));
-        rg_timer.setOnCheckedChangeListener(new RadioCheckedChangeListener(activity, rg_timer, new RadioCheckedChangeListener.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int checkedId, int beforeCheckedId) {
-                LogService.info(activity,"checkedID : " + checkedId);
-                LogService.info(activity,"beforeCheckedID : " + beforeCheckedId);
-                public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                    if(timerTask.hasRun()){
-                        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-                        builder.setMessage("Timer already Running!" +
-                                "\n Timer Stop?");
-                        builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                // listener Click
-                                listener_timer_stop.onClick(btn_timer_stop);
-                            }
-                        });
-                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                if(beforeCheckedId == R.id.rb_timer_wiget){
-                                    taskMode = 1;
-                                    ((RadioButton) rg_timer.getChildAt(0)).setChecked(true);
-                                }
-                                else if(beforeCheckedId == R.id.rb_timer_run){
-                                    taskMode = 2;
-                                    ((RadioButton) rg_timer.getChildAt(1)).setChecked(true);
-                                }
-                                else if(beforeCheckedId == R.id.rb_timer_handler){
-                                    taskMode = 3;
-                                    ((RadioButton) rg_timer.getChildAt(2)).setChecked(true);
-                                }
-                            }
-                        });
-                        // only Yes or No
-                        builder.setCancelable(false);
-                    }
-                    if(i == R.id.rb_timer_wiget){
-                        taskMode = 1;
-                    }
-                    else if(i == R.id.rb_timer_run){
-                        taskMode = 2;
-                    }
-                    else if(i == R.id.rb_timer_handler){
-                        taskMode = 3;
-                    }
-                    timerTask = new HandlerTask(tv_handler_time,taskMode,cnt);
-                }
-            }
-        }));
+        rg_timer.setOnCheckedChangeListener(new RadioCheckedChangeListener(activity, rg_timer, listener_timer_mode_change));
     }
+
+
     private RadioCheckedChangeListener.OnCheckedChangeListener listener_timer_mode_change = new RadioCheckedChangeListener.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(RadioGroup radioGroup, int checkedId, int beforeCheckedId) {
@@ -346,4 +297,3 @@ public class HandlerActivity extends AppCompatActivity {
         LogService.info(activity,"End Intent");
     }
 }
-*/

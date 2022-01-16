@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
             "Share Setting",
             "Scroll View",
             "Handler Activity",
-            "Custom Dialog"
+            "Custom Dialog",
+            "Async Task"
     };
 
     private String login_id;
@@ -141,10 +142,13 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(activity, ScrollActivity.class);
             }
             else if(item.equals("Handler Activity")){
-                //intent = new Intent(activity,HandlerActivity.class);
+                intent = new Intent(activity,HandlerActivity.class);
             }
             else if(item.equals("Custom Dialog")){
                 intent = new Intent(activity, CustomDialogActivity.class);
+            }
+            else if(item.equals("Async Task")){
+                intent = new Intent(activity, AsyncTaskActivity.class);
             }
             if(intent!=null){
                 //startActivity(intent);
