@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
             "Scroll View",
             "Handler Activity",
             "Custom Dialog",
-            "Async Task"
+            "Async Task",
+            "Content Provider"
     };
 
     private String login_id;
@@ -149,6 +150,9 @@ public class MainActivity extends AppCompatActivity {
             }
             else if(item.equals("Async Task")){
                 intent = new Intent(activity, AsyncTaskActivity.class);
+            }
+            else if(item.equals("Content Provider")){
+                intent = new Intent(activity, ContentProviderActivity.class);
             }
             if(intent!=null){
                 //startActivity(intent);

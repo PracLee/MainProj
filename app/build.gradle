@@ -41,7 +41,8 @@ android {
                                 'src\\main\\res\\scroll',
                                 'src\\main\\res\\handle',
                                 'src\\main\\res\\dialog',
-                                'src\\main\\res\\async'
+                                'src\\main\\res\\async',
+                                'src\\main\\res\\prov'
                         ]
             }
         }
